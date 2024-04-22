@@ -1,2 +1,0 @@
-# Trolley
-Final project
