@@ -1,32 +1,18 @@
-from hardware import MotorController
-from time import sleep 
-import bluetooth
-
-def setup_bluetooth_server():
-	server_socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-	port = 1
-	server_socket.bind(("", port))
-	server_socket.listen(1)
-	print("waiting to connect...")
-	cleint_socket, client_info = server_socket.accept()
-	print("Connected...")
-	return cleint_socket, server_socket
+import motor_controller as mc
 
 def main():
-	robot = MotorController()
-	client_socket, server_socket = setup_bluetooth_server()
-	
-	print("connection stablished")
-	
-	#test movements
-	robot.move_forward(2)
-	sleep(1)
-	robot.move_backward(2)
-	sleep(1)
-	robot.turn_left(1)
-	sleep(1)
-	robot.turn_right(1)
-
+    try:
+        mc.setup()
+        mc.set_motor_speed1(40)
+        mc.set_motor_speed2(80)
+        mc.forward(2)
+        mc.reverse(2)
+        mc.left(2)
+        mc.right(2)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        mc.cleanup()
 
 if __name__ == "__main__":
-	main()
+    main()
