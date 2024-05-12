@@ -10,3 +10,7 @@ INPUT2_PIN2 = 20
 
 # PWM Frequency
 PWM_FREQ = 100
+
+# Default Speeds
+DEFAULT_SPEEPD1 = 30
+DEFAULT_SPEEPD2 = 30
