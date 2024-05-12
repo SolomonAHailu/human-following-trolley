@@ -1,10 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-from config import ENABLE_PIN1, INPUT1_PIN1, INPUT2_PIN1, ENABLE_PIN2, INPUT1_PIN2, INPUT2_PIN2, PWM_FREQ
-
-# Default speeds, adjust these values as needed for your application
-DEFAULT_SPEED1 = 50
-DEFAULT_SPEED2 = 50
+from config import ENABLE_PIN1, INPUT1_PIN1, INPUT2_PIN1, ENABLE_PIN2, INPUT1_PIN2, INPUT2_PIN2, PWM_FREQ, DEFAULT_SPEED1, DEFAULT_SPEED2
 
 def setup():
     GPIO.setmode(GPIO.BCM)
