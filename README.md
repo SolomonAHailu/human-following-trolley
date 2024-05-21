@@ -24,6 +24,8 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="50" alt="vscode logo"  />
 </div>
 
+<br />
+
 ###
   
 <h2 align="left">Contributors to this project are: 👇 💼</h2>
@@ -59,6 +61,9 @@
 </div>
 
 <div>
+
+<br />
+<br />
 
 <h3 align="center">Hana Andargie 👷‍♀️</h3>
 
