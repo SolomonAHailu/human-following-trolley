@@ -30,7 +30,19 @@
 
 ###
 
-<div style="display: flex; justify-content: space-between;">
+<style>
+  .contributors-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .contributor {
+    width: 45%;
+    margin: 10px;
+  }
+</style>
+
+<div class="contributors-container">
 <div>
 <h3 align="center">Solomon Asregdew 👷‍♂️</h3>
 
