@@ -30,7 +30,7 @@
 
 ###
 
-<div>
+<div style="display: flex; justify-content: space-around;">
 <div>
 <h3 align="center">Solomon Asregdew 👷‍♂️</h3>
 
