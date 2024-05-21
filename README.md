@@ -25,11 +25,13 @@
 </div>
 
 ###
-
+  
 <h2 align="left">Contributors to this project are: 👇 💼</h2>
 
 ###
 
+<div >
+<div>
 <h3 align="center">Solomon Asregdew 👷‍♂️</h3>
 
 ###
@@ -57,10 +59,10 @@
 <div align="center">
   <img height="200" src="https://i.imgflip.com/65efzo.gif"  />
 </div>
-
+</div>
 ###
 
-<br />
+<div>
 
 <h3 align="center">Hana Andargie 👷‍♀️</h3>
 
@@ -79,5 +81,6 @@
 <div align="center">
   <img height="200" src="https://i.imgflip.com/65efzo.gif"  />
 </div>
-
+</div>
+</div>
 ###
