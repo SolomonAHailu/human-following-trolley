@@ -15,15 +15,6 @@ def make_interpreter_0(model_file):
     model_file, *device = model_file.split('@')
     return tflite.Interpreter(model_path=model_file)
 
-def make_interpreter_1(model_file):
-    #model_file, *device = model_file.split('@')
-    #return tflite.Interpreter(
-      #model_path=model_file,
-      #experimental_delegates=[
-        #  tflite.load_delegate(EDGETPU_SHARED_LIB,
-       #                        {'device': device[0]} if device else {})
-      #])
-      pass
 
 def set_input(interpreter, image, resample=Image.NEAREST):
     """Copies data to input tensor."""
@@ -68,10 +59,7 @@ def load_model(model_dir,model, lbl, edgetpu):
     model_path=os.path.join(model_dir,model)
     labels_path=os.path.join(model_dir,lbl)
     
-    #if(edgetpu==0):
     interpreter = make_interpreter_0(model_path)
-    #else:
-        #interpreter = make_interpreter_1(model_path)
     
     interpreter.allocate_tensors()
         

@@ -9,10 +9,6 @@ m1_1 = 8
 m1_2 = 11
 m2_1 = 9 #14 
 m2_2 = 25 #15 
-#cam_light = 17
-#headlight_right = 18
-#headlight_left = 27 
-#sp_light= 16 #9 
 
 def init_gpio():
 	GPIO.setmode(GPIO.BCM)
@@ -20,10 +16,6 @@ def init_gpio():
 	GPIO.setup(m1_2,GPIO.OUT)
 	GPIO.setup(m2_1,GPIO.OUT)
 	GPIO.setup(m2_2,GPIO.OUT)
-	#GPIO.setup(cam_light,GPIO.OUT)
-	#GPIO.setup(headlight_right,GPIO.OUT)
-	#GPIO.setup(headlight_left,GPIO.OUT)
-	#GPIO.setup(sp_light,GPIO.OUT)
 
 def back():
     print("moving back!!!!!!")
@@ -55,34 +47,3 @@ def stop():
 	GPIO.output(m1_2, False)
 	GPIO.output(m2_1, False)
 	GPIO.output(m2_2, False)
-
-#def speak_tts(text,gender):
-#	cmd="python /var/www/html/earthrover/speaker/speaker_tts.py '" + text + "' " + gender + " &"
-#	os.system(cmd)
-	
-#def camera_light(state):
-#	if(state=="ON"):
-#		GPIO.output(cam_light, True)
-		#print("light on")
-#	else:
-#		GPIO.output(cam_light, False)
-		#print("light off")
-		
-#def head_lights(state):
-#	if(state=="ON"):
-#		GPIO.output(headlight_left, True)
-#		GPIO.output(headlight_right, True)
-		#print("light on")
-#	else:
-#		GPIO.output(headlight_left, False)
-#		GPIO.output(headlight_right, False)
-		#print("light off")
-		
-#def red_light(state):
-#	if(state=="ON"):
-#		GPIO.output(sp_light, True)
-		#print("light on")
-#	else:
-#		GPIO.output(sp_light, False)
-		#print("light off")
-	
