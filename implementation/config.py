@@ -1,0 +1,16 @@
+# Motor 1 pins
+ENABLE_PIN1 = 24
+INPUT1_PIN1 = 16
+INPUT2_PIN1 = 12
+
+# Motor 2 pins
+ENABLE_PIN2 = 25
+INPUT1_PIN2 = 21
+INPUT2_PIN2 = 20
+
+# PWM Frequency
+PWM_FREQ = 100
+
+# Default Speeds
+DEFAULT_SPEED1 = 40
+DEFAULT_SPEED2 = 40
