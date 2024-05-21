@@ -25,10 +25,12 @@
 </div>
 
 <br />
+<br />
 
 ###
   
 <h2 align="left">Contributors to this project are: 👇 💼</h2>
+<br />
 
 ###
 
