@@ -30,11 +30,10 @@
 
 ###
 
-<div >
+<div>
 <div>
 <h3 align="center">Solomon Asregdew 👷‍♂️</h3>
 
-###
 
 <div align="center">
   <a href="https://www.linkedin.com/in/solomonasregdew" target="_blank">
@@ -76,7 +75,7 @@
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/instagram/default.svg" width="52" height="40" alt="instagram logo"  />
 </div>
 
-###
+
 
 <div align="center">
   <img height="200" src="https://i.imgflip.com/65efzo.gif"  />
