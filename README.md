@@ -2,7 +2,7 @@
 
 ###
 
-<p align="left">This repository 📂 contains the code for our final year project 🎓 at the Addis Ababa Institute of Technology (AAiT): the Autonomous Trolley 🛒. This innovative project aims to create a trolley that can navigate autonomously, enhancing user convenience and efficiency.<br><br>To achieve this, we harness the capabilities of the OpenCV library 📸 for real-time image processing and object detection. Additionally, TensorFlow Lite 🤖 is employed for running machine learning models directly on the device, ensuring rapid and efficient performance.<br><br>The entire system is powered by a Raspberry Pi 3 🍓, which provides the necessary computing power while maintaining a compact and portable form factor. Our project demonstrates the practical application of advanced technologies in creating intelligent, autonomous systems 🌟.</p>
+<p align="justify" >This repository 📂 contains the code for our final year project 🎓 at the Addis Ababa Institute of Technology (AAiT): the Autonomous Trolley 🛒. This innovative project aims to create a trolley that can navigate autonomously, enhancing user convenience and efficiency.<br><br>To achieve this, we harness the capabilities of the OpenCV library 📸 for real-time image processing and object detection. Additionally, TensorFlow Lite 🤖 is employed for running machine learning models directly on the device, ensuring rapid and efficient performance.<br><br>The entire system is powered by a Raspberry Pi 3 🍓, which provides the necessary computing power while maintaining a compact and portable form factor. Our project demonstrates the practical application of advanced technologies in creating intelligent, autonomous systems 🌟.</p>
 
 ###
 
