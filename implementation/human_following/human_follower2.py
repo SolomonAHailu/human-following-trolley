@@ -1,13 +1,3 @@
-"""
-Project: AI Robot - Human Following
-Author: Jitesh Saini
-Github: https://github.com/jiteshsaini
-website: https://helloworld.co.in
-
-The code in this file is same as 'human_follower.py' file. However, code with respect to FLASK implementation has been removed.
-So there is no streaming of camera view. This is bare minimum human following robot.
-"""
-
 import common as cm
 import cv2
 import numpy as np
@@ -38,13 +28,13 @@ object_to_track='person'
 #-----initialise motor speed-----------------------------------
 
 import RPi.GPIO as GPIO 
-GPIO.setmode(GPIO.BCM)  # choose BCM numbering scheme  
+GPIO.setmode(GPIO.BCM)  # choose BCM numbering scheme
       
 GPIO.setup(20, GPIO.OUT)# set GPIO 20 as output pin
 GPIO.setup(21, GPIO.OUT)# set GPIO 21 as output pin
       
-pin20 = GPIO.PWM(20, 100)    # create object pin20 for PWM on port 20 at 100 Hertz  
-pin21 = GPIO.PWM(21, 100)    # create object pin21 for PWM on port 21 at 100 Hertz  
+pin20 = GPIO.PWM(20, 100)    # create object pin20 for PWM on port 20 at 100 Hertz
+pin21 = GPIO.PWM(21, 100)    # create object pin21 for PWM on port 21 at 100 Hertz
 
 val=100 # maximum speed
 pin20.start(val)              # start pin20 on 0 percent duty cycle (off)  
@@ -52,6 +42,20 @@ pin21.start(val)              # start pin21 on 0 percent duty cycle (off)
 
 print("speed set to: ", val)
 #------------------------------------------
+
+######################################################
+##  Speed controlling here
+
+def set_speed(y_max):
+    # Assuming y_max ranges from 0 to 1, map it to a speed range (e.g., 40 to 100)
+    min_speed = 40
+    max_speed = 100
+    speed = int(min_speed + (max_speed - min_speed) * (1 - y_max))
+    pin20.ChangeDutyCycle(speed)
+    pin21.ChangeDutyCycle(speed)
+    print("Speed set to: ", speed)
+
+######################################################
 
 def track_object(objs,labels):
     
@@ -62,7 +66,7 @@ def track_object(objs,labels):
     if(len(objs)==0):
         print("no objects to track")
         ut.stop()
-        ut.red_light("OFF")
+        #ut.red_light("OFF")
         return
 
     flag=0
@@ -75,7 +79,7 @@ def track_object(objs,labels):
         
     #print(x_min, y_min, x_max, y_max)
     if(flag==0):
-        print("selected object no present")
+        print("Selected object no present")
         return
         
     x_diff=x_max-x_min
@@ -100,28 +104,29 @@ def move_robot():
     global x_deviation, y_max, tolerance
     
     y=1-y_max #distance from bottom of the frame
+    set_speed(y_max)
     
     if(abs(x_deviation)<tolerance):
         if(y<0.1):
-            ut.red_light("ON")
+            #ut.red_light("ON")
             ut.stop()
             print("reached person...........")
     
         else:
-            ut.red_light("OFF")
+            #ut.red_light("OFF")
             ut.forward()
-            print("moving robot ...FORWARD....!!!!!!!!!!!!!!")
+            print("moving robot ...FORWARD....!!!!!!")
     
     
     else:
-        ut.red_light("OFF")
+        #ut.red_light("OFF")
         if(x_deviation>=tolerance):
             delay1=get_delay(x_deviation)
                 
             ut.left()
             time.sleep(delay1)
             ut.stop()
-            print("moving robot ...Left....<<<<<<<<<<")
+            print("moving robot ...Left....<<<<<<")
     
                 
         if(x_deviation<=-1*tolerance):
@@ -130,7 +135,7 @@ def move_robot():
             ut.right()
             time.sleep(delay1)
             ut.stop()
-            print("moving robot ...Right....>>>>>>>>")
+            print("moving robot ...Right....>>>>>>")
     
 
 def get_delay(deviation):
