@@ -79,7 +79,7 @@ def track_object(objs,labels):
         
     #print(x_min, y_min, x_max, y_max)
     if(flag==0):
-        print("Selected object no present")
+        print("Selected object not present")
         return
         
     x_diff=x_max-x_min
@@ -115,7 +115,7 @@ def move_robot():
         else:
             #ut.red_light("OFF")
             ut.forward()
-            print("moving robot ...FORWARD....!!!!!!")
+            print("moving FORWARD....!!!!!!")
     
     else:
         #ut.red_light("OFF")
@@ -125,7 +125,7 @@ def move_robot():
             ut.left()
             time.sleep(delay1)
             ut.stop()
-            print("moving robot ...Left....<<<<<<")
+            print("moving Left....<<<<<<")
     
                 
         if(x_deviation<=-1*tolerance):
@@ -134,7 +134,7 @@ def move_robot():
             ut.right()
             time.sleep(delay1)
             ut.stop()
-            print("moving robot ...Right....>>>>>>")
+            print("moving Right....>>>>>>")
     
 
 def get_delay(deviation):

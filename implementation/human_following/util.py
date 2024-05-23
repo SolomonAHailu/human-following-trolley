@@ -7,8 +7,8 @@ edgetpu=0 # If Coral USB Accelerator connected, then make it '1' otherwise '0'
 
 m1_1 = 8
 m1_2 = 11
-m2_1 = 9 #14 
-m2_2 = 25 #15 
+m2_1 = 9  
+m2_2 = 25  
 
 def init_gpio():
 	GPIO.setmode(GPIO.BCM)

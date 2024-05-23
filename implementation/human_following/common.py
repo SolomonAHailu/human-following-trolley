@@ -64,7 +64,6 @@ def load_model(model_dir,model, lbl, edgetpu):
     interpreter.allocate_tensors()
         
     labels = load_labels(labels_path)
-    print("MODEL IS LOADED")
     
     return interpreter, labels
     
