@@ -5,6 +5,7 @@ import os, time
 
 edgetpu=0 # If Coral USB Accelerator connected, then make it '1' otherwise '0'
 
+# Motor pins
 m1_1 = 8
 m1_2 = 11
 m2_1 = 9  
@@ -18,7 +19,6 @@ def init_gpio():
 	GPIO.setup(m2_2,GPIO.OUT)
 
 def back():
-    print("moving back!!!!!!")
     GPIO.output(m1_1, False)
     GPIO.output(m1_2, True)
     GPIO.output(m2_1, True)
