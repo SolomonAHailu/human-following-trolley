@@ -104,7 +104,7 @@ def move_robot():
     global x_deviation, y_max, tolerance
     
     y=1-y_max #distance from bottom of the frame
-    set_speed(y_max)
+    #set_speed(y_max)
     
     if(abs(x_deviation)<tolerance):
         if(y<0.1):
@@ -116,7 +116,6 @@ def move_robot():
             #ut.red_light("OFF")
             ut.forward()
             print("moving robot ...FORWARD....!!!!!!")
-    
     
     else:
         #ut.red_light("OFF")
