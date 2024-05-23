@@ -108,39 +108,34 @@ def move_robot():
     
     if(abs(x_deviation)<tolerance):
         if(y<0.1):
-            #ut.red_light("ON")
             ut.stop()
             print("reached person...........")
     
         else:
-            #ut.red_light("OFF")
             ut.forward()
             print("moving FORWARD....!!!!!!")
     
     else:
-        #ut.red_light("OFF")
         if(x_deviation>=tolerance):
             delay1=get_delay(x_deviation)
-                
+
             ut.left()
             time.sleep(delay1)
             ut.stop()
             print("moving Left....<<<<<<")
     
-                
         if(x_deviation<=-1*tolerance):
             delay1=get_delay(x_deviation)
-                
+
             ut.right()
             time.sleep(delay1)
             ut.stop()
             print("moving Right....>>>>>>")
-    
 
 def get_delay(deviation):
-    
+
     deviation=abs(deviation)
-    
+
     if(deviation>=0.4):
         d=0.080
     elif(deviation>=0.35 and deviation<0.40):
@@ -149,51 +144,50 @@ def get_delay(deviation):
         d=0.050
     else:
         d=0.040
-    
+
     return d
 
 def main():
-  
+
     interpreter, labels =cm.load_model(model_dir,model_edgetpu,lbl,edgetpu)
-    
+
     fps=1
-   
+
     while True:
         start_time=time.time()
-        
+
         #----------------Capture Camera Frame-----------------
         ret, frame = cap.read()
         if not ret:
             break
-        
+
         cv2_im = frame
         cv2_im = cv2.flip(cv2_im, 0)
         cv2_im = cv2.flip(cv2_im, 1)
 
         cv2_im_rgb = cv2.cvtColor(cv2_im, cv2.COLOR_BGR2RGB)
         pil_im = Image.fromarray(cv2_im_rgb)
-       
+
         #-------------------Inference---------------------------------
         cm.set_input(interpreter, pil_im)
         interpreter.invoke()
         objs = cm.get_output(interpreter, score_threshold=threshold, top_k=top_k)
-        
+
         #-----------------other------------------------------------
-        track_object(objs,labels)#tracking  <<<<<<<
-       
+        track_object(objs,labels)#tracking
+
         fps = round(1.0 / (time.time() - start_time),1)
         print("*********FPS: ",fps,"************")
-        
+    
         # Display the original unrotated BGR image
         cv2.imshow("Frame", frame)
         
         # Key event handling
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
-        
+
     cap.release()
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
     main()
-
