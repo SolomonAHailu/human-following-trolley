@@ -43,8 +43,7 @@ pin21.start(val)              # start pin21 on 0 percent duty cycle (off)
 print("speed set to: ", val)
 #------------------------------------------
 
-######################################################
-##  Speed controlling here
+######### Speed controlling here ##########
 
 def set_speed(y_max):
     # Assuming y_max ranges from 0 to 1, map it to a speed range (e.g., 40 to 100)
@@ -55,7 +54,7 @@ def set_speed(y_max):
     pin21.ChangeDutyCycle(speed)
     print("Speed set to: ", speed)
 
-######################################################
+######### Speed controlling here ##########
 
 def track_object(objs,labels):
     
