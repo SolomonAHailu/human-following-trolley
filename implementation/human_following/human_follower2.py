@@ -62,11 +62,9 @@ def track_object(objs,labels):
     #global delay
     global x_deviation, y_max, tolerance
     
-    
     if(len(objs)==0):
         print("no objects to track")
         ut.stop()
-        #ut.red_light("OFF")
         return
 
     flag=0
@@ -76,8 +74,7 @@ def track_object(objs,labels):
             x_min, y_min, x_max, y_max = list(obj.bbox)
             flag=1
             break
-        
-    #print(x_min, y_min, x_max, y_max)
+
     if(flag==0):
         print("Selected object not present")
         return
