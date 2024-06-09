@@ -56,7 +56,7 @@ def set_speed(y_max):
 
 ######### Speed controlling here ##########
 
-######### Distance Measuring function ###########
+######### Distance Measuring function #######
 
 # Set up the GPIO pins for the first sensor
 GPIO.setup(TRIG1, GPIO.OUT)
