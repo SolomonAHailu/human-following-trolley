@@ -7,7 +7,7 @@ print ("local_path: ", local_path)
 
 status = sys.argv[1]
 
-file_name="human_follower.py"
+file_name="human_follower2.py"
 
 if (status=="1"):
 	print "starting Object Detection script"

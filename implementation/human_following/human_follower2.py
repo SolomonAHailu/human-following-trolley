@@ -56,6 +56,39 @@ def set_speed(y_max):
 
 ######### Speed controlling here ##########
 
+######### Distance Measuring function ###########
+
+# Set up the GPIO pins for the first sensor
+GPIO.setup(TRIG1, GPIO.OUT)
+GPIO.setup(ECHO1, GPIO.IN)
+
+# Set up the GPIO pins for the second sensor
+GPIO.setup(TRIG2, GPIO.OUT)
+GPIO.setup(ECHO2, GPIO.IN)
+
+def measure_distance(trig, echo):
+    # Send a 10us pulse to the TRIG pin
+    GPIO.output(trig, True)
+    time.sleep(0.00001)
+    GPIO.output(trig, False)
+
+    # Measure the duration of the ECHO pin's high signal
+    pulse_start = time.time()
+    pulse_end = time.time()
+
+    while GPIO.input(echo) == 0:
+        pulse_start = time.time()
+
+    while GPIO.input(echo) == 1:
+        pulse_end = time.time()
+
+    # Calculate the distance
+    pulse_duration = pulse_end - pulse_start
+    distance = pulse_duration * 17150  # Speed of sound in cm/s divided by 2
+    return round(distance, 2)
+    
+######### Distance Measuring function ###########
+
 def track_object(objs,labels):
     
     #global delay
