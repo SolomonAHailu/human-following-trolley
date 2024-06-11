@@ -58,6 +58,12 @@ def set_speed(y_max):
 
 ######### Distance Measuring function #######
 
+# Define the GPIO pins for the ultrasonic sensors
+TRIG1 = 2
+ECHO1 = 3
+TRIG2 = 19
+ECHO2 = 26
+
 # Set up the GPIO pins for the first sensor
 GPIO.setup(TRIG1, GPIO.OUT)
 GPIO.setup(ECHO1, GPIO.IN)
@@ -133,7 +139,11 @@ def move_robot():
     global x_deviation, y_max, tolerance
     
     y=1-y_max #distance from bottom of the frame
-    #set_speed(y_max)
+    set_speed(y_max)
+    
+    dist1 = measure_distance(TRIG1, ECHO1)
+    dist2 = measure_distance(TRIG2, ECHO2)
+    print(f"dist1 = {dist1} & dist2 = {dist2}")
     
     if(abs(x_deviation)<tolerance):
         if(y<0.1):
