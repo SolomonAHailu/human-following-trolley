@@ -151,14 +151,60 @@ def move_robot():
             print("reached person...........")
     
         else:
-            ut.forward()
+            #ut.forward()
+            if dist1 < threshold_dist & dist2 > threshold_dist:
+                left()
+                sleep(1)
+                forward()
+            elif dist1 > threshold_dist & dist2 < threshold_dist:
+                righ()
+                sleep(1)
+                forward()
+            elif dis1 < threshold_dist & dist2 < threshold_dist:
+                back()
+                sleep(1)
+
+                if dist1 < dist2:
+                    left()
+                    sleep(1)
+                    forward()
+                elif dist1 > dist2:
+                    right()
+                    sleep(1)
+                    forward()
+                else: 
+                    stop() # led
+            else: ut.forward()
             print("moving FORWARD....!!!!!!")
     
     else:
         if(x_deviation>=tolerance):
             delay1=get_delay(x_deviation)
 
-            ut.left()
+            #ut.left()
+            if dist1 < threshold_dist & dist2 > threshold_dist:
+                left()
+                sleep(1)
+                forward()
+            elif dist1 > threshold_dist & dist2 < threshold_dist:
+                righ()
+                sleep(1)
+                forward()
+            elif dis1 < threshold_dist & dist2 < threshold_dist:
+                back()
+                sleep(1)
+
+                if dist1 < dist2:
+                    left()
+                    sleep(1)
+                    forward()
+                elif dist1 > dist2:
+                    right()
+                    sleep(1)
+                    forward()
+                else: 
+                    stop() # led
+            else: ut.left()
             time.sleep(delay1)
             ut.stop()
             print("moving Left....<<<<<<")
@@ -166,7 +212,30 @@ def move_robot():
         if(x_deviation<=-1*tolerance):
             delay1=get_delay(x_deviation)
 
-            ut.right()
+            #ut.right()
+            if dist1 < threshold_dist & dist2 > threshold_dist:
+                left()
+                sleep(1)
+                forward()
+            elif dist1 > threshold_dist & dist2 < threshold_dist:
+                righ()
+                sleep(1)
+                forward()
+            elif dis1 < threshold_dist & dist2 < threshold_dist:
+                back()
+                sleep(1)
+
+                if dist1 < dist2:
+                    left()
+                    sleep(1)
+                    forward()
+                elif dist1 > dist2:
+                    right()
+                    sleep(1)
+                    forward()
+                else: 
+                    stop() # led
+            else: ut.right()
             time.sleep(delay1)
             ut.stop()
             print("moving Right....>>>>>>")
