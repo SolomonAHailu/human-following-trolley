@@ -1,4 +1,4 @@
-mport RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import util as ut
 import time
 GPIO.setmode(GPIO.BCM)  # choose BCM numbering scheme
